@@ -31,9 +31,7 @@ function Game() {
       setGameOver(true);
       setGameStatus("lose");
     } else {
-      if (checkGuess(guess, answer).filter(({ letter, status }) => {
-        return status === "correct";
-      }).length === 5) {
+      if (guess.toLowerCase() === answer.toLowerCase()) {
         setGameStatus("win");
         setGameOver(true);
       }
